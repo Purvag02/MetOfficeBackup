@@ -25,8 +25,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="MetOffice API",
         default_version='v1',
-        description="This API is to get UK MetOffice Weather data based on Region and Parameter",
-        # terms_of_service="https://www.metoffice_app.com/terms/",
+        description="This API is to get UK MetOffice Weather data based on Region and Parameter"
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -34,7 +33,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('metoffice_app.urls')),  # Replace 'yourapp' with the actual app name
+    path('api/', include('metoffice_app.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0),
          name='schema-swagger-ui'),
 ]
